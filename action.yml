@@ -1,4 +1,4 @@
-name: "Podcast Generator--"
+name: "Podcast Generator"
 author: "Karen H"
 description: "Generates a podcast feed using the feed.py script."
 runs:
