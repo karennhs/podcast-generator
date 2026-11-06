@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
 # Verify installation
 RUN python3.10 --version
 
-RUN pip3 install PyYAML
+#RUN pip3 install PyYAML
+RUN pip3 install --no-cache-dir "PyYAML>=6.0.1"
 
 COPY feed.py /usr/bin/feed.py
 
