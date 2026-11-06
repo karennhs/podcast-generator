@@ -11,6 +11,9 @@ RUN apt-get update && apt-get install -y \
     && apt-get install -y python3.10 python3.10-venv python3.10-dev \
     && rm -rf /var/lib/apt/lists/*
 
+# Verify installation
+RUN python3.10 --version
+
 RUN pip3 install PyYAML
 
 COPY feed.py /usr/bin/feed.py
