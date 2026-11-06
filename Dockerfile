@@ -1,9 +1,15 @@
 FROM ubuntu:latest
 
+# Prevent interactive prompts during installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install prerequisites, add the PPA, and install Python 3.10
 RUN apt-get update && apt-get install -y \
-  python3.12 \
-  python3-pip \
-  git
+    software-properties-common \
+    && add-apt-repository ppa:deadsnakes/ppa \
+    && apt-get update \
+    && apt-get install -y python3.10 python3.10-venv python3.10-dev \
+    && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install PyYAML
 
